@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+@keyframes heromotion {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    border-color: #6300ba;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    border-color: rgb(78, 7, 183);
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    border-color: #9c2aff;
+  }
+}
+
+
+
+
+.hero-img {
+  -webkit-animation: heromotion 5s ease-in-out infinite !important;
+  animation: heromotion 5s ease-in-out infinite !important;
+  background-image: url(../assets/Avatar.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  border: 4px solid;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  position: relative;
+  transition: all 3s ease-in-out;
+  height: 18rem;
+  width: 18rem;
+}
