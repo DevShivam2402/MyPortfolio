@@ -23,8 +23,8 @@ const SocialLink = ({ href, icon }: any) => (
 
 
 interface TypewriterTextProps {
-  text: string; // Ensure text is a string
-  speed?: number; // Make speed optional and default to 150
+  text: string; 
+  speed?: number; 
 }
 
 const TypewriterText: React.FC<TypewriterTextProps> = ({ text, speed = 150 }) => {
