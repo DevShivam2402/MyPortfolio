@@ -1,22 +1,23 @@
-"use client"
 
-
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import Image from "next/image"
 import Avatar from "@/assets/Avatar.png"
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    
+   
 
     return (
         <nav className=" shadow fixed w-full top-10 z-50 backdrop bg-white">
-            <div className="max-w-4xl mx-auto p-4">
+            <div className="max-w-5xl mx-auto p-4">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo/Name with hover animation */}
                     <div className="flex items-center">
@@ -53,14 +54,28 @@ const Navbar = () => {
 
                     {/* Mobile Menu Button with rotation animation */}
                     <div className="md:hidden flex items-center">
-                        <button
-                            onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 focus:outline-none transition-colors duration-300"
-                        >
-                            <div className="transform transition-transform duration-300">
-                                {isOpen ? <X size={24} className="rotate-90" /> : <Menu size={24} />}
-                            </div>
-                        </button>
+                        <Sheet>
+                            <SheetTrigger>
+                                <Menu/>
+                            </SheetTrigger>
+                            <SheetContent>
+                                <SheetHeader>
+                                    <div className='flex flex-col items-start gap-8'>
+                                        {['Project', 'Blog', 'Snippet Code'].map((item) => (
+                                            <Link
+                                                key={item}
+                                                href={`/${item.toLowerCase().replace(' ', '-')}`}
+                                                className="relative text-black hover:text-blue-600 transition-all duration-300 group"
+                                            >
+                                                {item}
+
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </SheetHeader>
+                            </SheetContent>
+                        </Sheet>
+
                     </div>
                 </div>
 

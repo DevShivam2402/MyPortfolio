@@ -129,11 +129,11 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen pt-20">
       {/* Navigation remains the same */}
 
       {/* Enhanced Hero Section */}
-      <section id="home" className="pt-10 pb-20 h-screen sm:h-[35vh] lg:h-[100vh] flex items-center">
+      <section id="home" className="pt-20 lg:pt-10 pb-20 h-screen sm:h-[35vh] lg:h-[100vh] flex items-center">
         <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 items-center justify-center">
             {/* <div className="flex justify-center">

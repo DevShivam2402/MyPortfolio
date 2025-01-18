@@ -86,9 +86,9 @@ const WebsitePreview = ({ url }) => {
 
   if (loading) {
     return (
-      <div className="w-full bg-white h-full overflow-hidden  rounded-lg">
+      <div className="w-full bg-white h-full overflow-hidden -z-10  rounded-lg">
         <div className="p-2 w-full  h-[60vh]  ">
-          <div className="w-full h-[40vh]  bg-gray-400 rounded-lg inset-0 animate-pulse" />
+          <div className="w-full h-[40vh] z-10 bg-gray-400 rounded-lg inset-0 animate-pulse" />
           <div className="space-y-5 h-full  justify-between  flex flex-col p-4">
             <div className="bg-gray-400 h-10 rounded-lg inset-0 animate-pulse w-[70%]" />
           </div>
