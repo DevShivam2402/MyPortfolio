@@ -1,7 +1,10 @@
 // app/page.js
-// 'use client';
-// import { useState, useEffect } from 'react';
-import { GithubIcon, LinkedinIcon, Mail,  MapPin,  Twitter, ExternalLink } from 'lucide-react';
+'use client';
+import { useState } from 'react';
+import WebsitePreview from '@/component/Projectpreview';
+
+import { GithubIcon, LinkedinIcon, Mail,  MapPin,  Twitter } from 'lucide-react';
+// import { GithubIcon, LinkedinIcon, Mail,  MapPin,  Twitter, ExternalLink } from 'lucide-react';
 
 // import Image from "next/image"
 // import Avatar from "@/assets/Avatar.png"
@@ -13,7 +16,7 @@ import { GithubIcon, LinkedinIcon, Mail,  MapPin,  Twitter, ExternalLink } from 
 const SocialLink = ({ href, icon }: any) => (
   <a
     href={href}
-    className="text-gray-200 hover:text-indigo-600 transition-colors"
+    className="text-gray-600 hover:text-indigo-600 transition-colors"
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -46,23 +49,41 @@ const SocialLink = ({ href, icon }: any) => (
 
 const projects = [
   {
-    title: 'Portfolio Website',
-    description: 'Built a responsive personal portfolio using Next.js and Tailwind CSS.',
-    tech: ['Next.js', 'Tailwind CSS'],
-    link: 'https://your-portfolio.com'
+    
+    link: 'https://www.refinix.in/'
   },
   {
-    title: 'E-commerce Platform',
-    description: 'Developed a full-stack e-commerce application with secure payment integration.',
-    tech: ['React', 'Node.js', 'Stripe'],
-    link: 'https://ecommerce-demo.com'
+    
+    link: 'https://woodandveneer.in/'
   },
   {
-    title: 'Blog Platform',
-    description: 'Created a dynamic blog site with markdown support and server-side rendering.',
-    tech: ['Gatsby', 'GraphQL', 'Contentful'],
-    link: 'https://blog-example.com'
-  }
+    
+    link: 'https://epichair.vercel.app/'
+  },
+  {
+    
+    link: 'https://www.birparagliding.in/'
+  },
+  {
+    
+    link: 'https://www.noblessetech.com/'
+  },
+  {
+    
+    link: 'https://www.tecklo.co/'
+  },
+  {
+    
+    link: 'https://shelvestech.com/'
+  },
+  {
+    
+    link: 'https://homestay-iota.vercel.app/'
+  },
+  {
+    
+    link: 'https://beeryani.vercel.app/'
+  },
 ];
 
 
@@ -104,9 +125,11 @@ const education = [
 
 export default function Home() {
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAll, setShowAll] = useState(false); // State to toggle project visibility
+
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen ">
       {/* Navigation remains the same */}
 
       {/* Enhanced Hero Section */}
@@ -127,10 +150,10 @@ export default function Home() {
               </div>
             </div> */}
             <div className='flex justify-center items-center'>
-              <div className="hero-img w-80 h-80 sm:w-80 sm:h-80 border rounded-md  hover:shadow-xl duration-300 hover:shadow-purple-300"></div>
+              <div className="hero-img w-80 h-80 sm:w-80 sm:h-80 border rounded-md -z-10  hover:shadow-xl duration-300 hover:shadow-purple-300"></div>
             </div>
             <div className="text-start">
-              <h1 className="text-6xl font-extrabold text-white my-4 font-mono">
+              <h1 className="text-6xl font-extrabold text-gray-900 my-4 font-mono">
                 {/* <TypewriterText text="" /> */}
                 Full Stack Developer
               </h1>
@@ -152,17 +175,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-gray-800">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <section id="about" className="py-20 bg-hite">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-indigo-600 mb-12">
             About Me
           </h2>
           <div className=" items-center">
             <div className="space-y-6">
-              <span className="text-xl font-bold text-indigo-600 p-2 px-4 rounded-xl bg-white">
+              <span className="text-xl font-bold bg-indigo-600 p-2 px-4 rounded-xl text-white">
                 Full Stack Developer
               </span>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 I am a Full Stack developer based in India. I&apos;m an Computer Science Engineering undergraduate from SRGC. I&apos;m passionate about creating functional, and user-friendly websites and applications, and I&apos;m constantly pushing myself to learn and grow as a developer.
               </p>
               {/* <p className="text-gray-700 leading-relaxed">
@@ -196,7 +219,7 @@ export default function Home() {
                   'TypeScript'
                 ]
                   .map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-indigo-600 text-indigo-200 rounded-full text-sm ">
+                    <span key={skill} className="px-3 py-1 bg-indigo-800 text-white rounded-full text-sm ">
                       {skill}
                     </span>
                   ))}
@@ -208,26 +231,26 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <section id="experience" className="py-20 ">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-black mb-12">
             Work Experience
           </h2>
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <div key={index} className="bg-gray-800 rounded-lg p-6 hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white border rounded-lg p-6 hover:shadow-md transition-shadow">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white">{exp.position}</h3>
-                    <div className="flex justify-between gap-4"> <p className="text-indigo-300">{exp.company}</p>
-                      <span className="text-gray-300 md:hidden">{exp.period}</span></div>
+                    <h3 className="text-xl font-bold text-indigo-600">{exp.position}</h3>
+                    <div className="flex justify-between gap-4"> <p className="text-indigo-500">{exp.company}</p>
+                      <span className="text-gray-600 md:hidden">{exp.period}</span></div>
                   </div>
-                  <span className="text-gray-300 hidden md:block">{exp.period}</span>
+                  <span className="text-gray-600 hidden md:block">{exp.period}</span>
                 </div>
                 <div className="text-gray-700 mb-4">
 
                   {exp.description.map((tech, i) => (
-                    <li key={i} className="px-3 py-1  text-gray-200  text-sm">
+                    <li key={i} className="px-3 py-1  text-gray-600  text-sm">
                       {tech}
                     </li>
                   ))}
@@ -246,27 +269,27 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gray-800">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <section id="education" className="py-20 ">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-black mb-12">
             Education
           </h2>
           <div className="space-y-8">
             {education.map((edu, index) => (
-              <div key={index} className="bg-black rounded-lg p-6 hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white rounded-lg border p-6 hover:shadow-md transition-shadow">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
+                    <h3 className="text-xl font-bold text-indigo-600">{edu.degree}</h3>
                     <div className="flex justify-between gap-4">
-                    <p className="text-indigo-300">{edu.school}</p>
+                    <p className="text-indigo-500">{edu.school}</p>
 
-                  <span className="text-gray-200 md:hidden  ">{edu.period}</span>
+                  <span className="text-gray-600 md:hidden  ">{edu.period}</span>
 
                     </div>
 
                     
                   </div>
-                  <span className="text-gray-200 hidden md:block">{edu.period}</span>
+                  <span className="text-gray-600 hidden md:block">{edu.period}</span>
                 </div>
                 {/* <p className="text-gray-700">{edu.description}</p> */}
               </div>
@@ -278,35 +301,36 @@ export default function Home() {
 
 
       {/* Education Section */}
-      <section id="project" className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <section id="project" className="py-20 ">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-black mb-12">
             Projects
           </h2>
-          <div className="space-y-8">
+          {/* <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
+           
+
             {projects.map((project, index) => (
-              <div key={index} className="bg-gray-800 rounded-lg p-6 group hover:shadow-md transition-shadow duration-600">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-400 hover:underline duration-500 group-hover:translate-x-3 group-hover:-translate-y-3"
-                  >
-                    <ExternalLink size={24} />
-                  </a>
-                </div>
-                <p className="text-gray-200 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span key={i} className="px-3 py-1 bg-indigo-600 text-indigo-200 rounded-full text-sm">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+
+               <WebsitePreview key={index} url={project.link} />
+            
             ))}
+          </div> */}
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Render the first two projects or all projects based on 'showAll' */}
+            {(showAll ? projects : projects.slice(0, 2)).map((project, index) => (
+              <WebsitePreview key={index} url={project.link} />
+            ))}
+
+            {/* Button to toggle visibility */}
+            <div className="col-span-full text-center mt-4">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition duration-300"
+              >
+                {showAll ? "Show Less" : "Show All Projects"}
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -314,13 +338,13 @@ export default function Home() {
       {/* Skills and Projects sections remain the same */}
 
       {/* Enhanced Contact Section */}
-      <section id="contact" className="py-20 bg-gray-800">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-100 mb-12">
+      <section id="contact" className="py-20 bg-gray-100">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Get In Touch
           </h2>
           <div className="max-w-2xl mx-auto">
-            <div className="bg-gray-950 rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
               <h3 className="text-xl font-bold mb-8 text-indigo-600 text-center">
                 Contact Information
               </h3>
@@ -329,14 +353,14 @@ export default function Home() {
                   <Mail className="text-indigo-600" />
                   <a
                     href="mailto:shivam.dev2402@gmail.com"
-                    className="text-gray-200 hover:text-indigo-600 transition-colors"
+                    className="text-gray-600 hover:text-indigo-600 transition-colors"
                   >
                     shivam.dev2402@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center justify-center space-x-3">
                   <MapPin className="text-indigo-600" />
-                  <span className="text-gray-200">India</span>
+                  <span className="text-gray-600">India</span>
                 </div>
                 <div className="pt-6 border-t border-gray-200">
                   <div className="flex justify-center space-x-6">
@@ -360,7 +384,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="text-center mt-8 text-gray-200">
+            <div className="text-center mt-8 text-gray-600">
               <p>Feel free to reach out through any of these platforms.</p>
               <p className="mt-2">I&apos;ll get back to you as soon as possible!</p>
             </div>
