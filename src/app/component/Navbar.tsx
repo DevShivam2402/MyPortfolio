@@ -2,7 +2,7 @@
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import Image from "next/image"
-import Avatar from "@/assets/Avatar.png"
+import Avatar from "@/asset/Avatar.webp"
 import {
     Sheet,
     SheetContent,
@@ -16,8 +16,8 @@ const Navbar = () => {
    
 
     return (
-        <nav className=" shadow fixed w-full top-10 z-50 backdrop bg-white">
-            <div className="max-w-5xl mx-auto p-4">
+        <nav className=" ">
+            <div className="max-w-4xl  mx-auto p-4">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo/Name with hover animation */}
                     <div className="flex items-center">
@@ -36,7 +36,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Navigation with hover animations */}
-                    <div className="hidden md:block ">
+                    {/* <div className="hidden md:block ">
                         <div className='flex items-center gap-8'>
                             {['Project', 'Blog', 'Snippet Code'].map((item) => (
                                 <Link
@@ -50,10 +50,10 @@ const Navbar = () => {
                             ))}
                        </div>
                        
-                    </div>
+                    </div> */}
 
                     {/* Mobile Menu Button with rotation animation */}
-                    <div className="md:hidden flex items-center">
+                    {/* <div className="md:hidden flex items-center">
                         <Sheet>
                             <SheetTrigger>
                                 <Menu/>
@@ -76,7 +76,7 @@ const Navbar = () => {
                             </SheetContent>
                         </Sheet>
 
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Mobile Navigation with slide and fade animations */}
